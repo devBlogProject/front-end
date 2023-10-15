@@ -9,7 +9,7 @@ function Login() {
   const handleSubmit = async () => {
     try {
       const response = await axios.post(
-        "https://your-api-url.com/login",
+        "http://ec2-18-221-110-62.us-east-2.compute.amazonaws.com:8080/auth/login",
         loginData
       );
       // response 확인용 출력(확인 후 삭제)

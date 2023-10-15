@@ -8,23 +8,34 @@ const SignIn = () => {
     email: "",
     password: "",
     passwordConfirm: "",
-    nickname: "",
+    nickName: "",
   });
-  const [passwordMatch, setPasswordMatch] = useState(true);
+  const [passwordMatch, setPasswordMatch] = useState(false);
   const handleSubmit = async () => {
     if (signinData.password === signinData.passwordConfirm) {
       try {
-        const response = await axios.post("https://api.example.com/register", {
-          email: signinData.email,
-          password: signinData.password,
-          nickname: signinData.nickname,
-        });
+        const response = await axios.post(
+          "http://ec2-18-221-110-62.us-east-2.compute.amazonaws.com:8080/member/signup",
+          {
+            email: signinData.email,
+            password: signinData.password,
+            nickname: signinData.nickName,
+          }
+        );
+        console.log("response 응답값", response);
       } catch (error) {
         console.error("회원가입 실패", error);
       }
     } else {
-      setPasswordMatch(false);
+      setPasswordMatch(true);
     }
+
+    setSigninData({
+      email: "",
+      password: "",
+      passwordConfirm: "",
+      nickName: "",
+    });
   };
   return (
     <div>
@@ -52,9 +63,17 @@ const SignIn = () => {
           setSigninData({ ...signinData, passwordConfirm: e.target.value })
         }
       />
-      {!passwordMatch && (
+      {passwordMatch && (
         <p style={{ color: "red" }}>비밀번호가 일치하지 않습니다.</p>
       )}
+      <input
+        type="text"
+        placeholder="닉네임"
+        value={signinData.nickName}
+        onChange={(e) =>
+          setSigninData({ ...signinData, nickName: e.target.value })
+        }
+      />
       <button onClick={handleSubmit}>가입하기</button>
     </div>
   );
