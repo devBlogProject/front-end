@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 function Login() {
   const navigate = useNavigate();
@@ -9,30 +10,25 @@ function Login() {
   const handleSubmit = async () => {
     try {
       const response = await axios.post(
-        "http://ec2-18-221-110-62.us-east-2.compute.amazonaws.com:8080/auth/login",
+        "http://ec2-43-200-212-212.ap-northeast-2.compute.amazonaws.com:8080/auth/login",
         loginData
       );
       // response 확인용 출력(확인 후 삭제)
-      console.log(`response.data:${response.data}`);
 
       if (response.data) {
+        console.log(`response.data:`, response.data);
+        console.log(`data:`, response);
         console.log("로그인 성공!");
         const { accessToken, refreshToken } = response.data;
-        localStorage.setItem("accessToken", accessToken);
-        localStorage.setItem("refreshToken", refreshToken);
-        console.log(`accessToken:${accessToken},refreshToken:${refreshToken}`); //테스트용 출력
-        navigate("/page/:userId"); // 로그인 성공 시, 개인 페이지로 이동
-      } else {
-        console.log("로그인 실패");
-        navigate(-1);
+        Cookies.set("accessToken", accessToken, { expires: 7 });
+        Cookies.set("refreshToken", refreshToken, { expires: 7 });
+
+        navigate("/"); // 로그인 성공 시 메인 페이지로
       }
     } catch (error) {
       console.error("로그인 실패:", error);
-      // if (error.response && error.response.status === 401) {
-      //   alert("인증 실패: 올바른 사용자 이름과 암호를 입력하십시오.");
-      // } else {
-      //   alert("로그인에 실패했습니다. 다시 시도하십시오.");
-      // }
+      navigate("/login");
+      window.alert(`"로그인에 실패했습니다. 다시 시도해 주세요."`);
     }
     setLoginData({ email: "", password: "" });
   };

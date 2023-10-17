@@ -11,20 +11,24 @@ const SignIn = () => {
     nickName: "",
   });
   const [passwordMatch, setPasswordMatch] = useState(false);
+
   const handleSubmit = async () => {
     if (signinData.password === signinData.passwordConfirm) {
       try {
         const response = await axios.post(
-          "http://ec2-18-221-110-62.us-east-2.compute.amazonaws.com:8080/member/signup",
+          "http://ec2-43-200-212-212.ap-northeast-2.compute.amazonaws.com:8080/member/signup",
           {
             email: signinData.email,
             password: signinData.password,
-            nickname: signinData.nickName,
+            nickName: signinData.nickName,
           }
         );
         console.log("response 응답값", response);
+        navigate("/login");
       } catch (error) {
         console.error("회원가입 실패", error);
+        // let pwError = error.response.data.errors[0].defaultMessage;
+        // let mailError = error.response.data.errors[1].defaultMessage;
       }
     } else {
       setPasswordMatch(true);
