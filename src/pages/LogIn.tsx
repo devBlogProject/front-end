@@ -1,3 +1,4 @@
+import "./../styles/LogIn.css";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
@@ -34,25 +35,45 @@ function Login() {
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="이메일"
-        value={loginData.email}
-        onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
-      />
-      <input
-        type="password"
-        placeholder="비밀번호"
-        value={loginData.password}
-        onChange={(e) =>
-          setLoginData({ ...loginData, password: e.target.value })
-        }
-      />
-      <button onClick={handleSubmit}>로그인</button>
-      <Link to={"/signin"}>
-        <button>회원가입</button>
-      </Link>
+    <div className="wrapper">
+      <div className="input-h1">
+        <h1>
+          <Link to={"/"}>
+            <span>DEVBOLG</span>
+          </Link>
+        </h1>
+      </div>
+      <div className="input">
+        <input
+          type="text"
+          placeholder="이메일"
+          value={loginData.email}
+          onChange={(e) =>
+            setLoginData({ ...loginData, email: e.target.value })
+          }
+        />
+      </div>
+      <div className="input">
+        <input
+          type="password"
+          placeholder="비밀번호"
+          value={loginData.password}
+          onChange={(e) =>
+            setLoginData({ ...loginData, password: e.target.value })
+          }
+        />
+      </div>
+      <div className="button">
+        <button className="button-submit" onClick={handleSubmit}>
+          로그인
+        </button>
+      </div>
+
+      <div className="button">
+        <Link to={"/signin"}>
+          <button className="button-submit">회원가입</button>
+        </Link>
+      </div>
     </div>
   );
 }
