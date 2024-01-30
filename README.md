@@ -9,5 +9,8 @@ yarn install
 ```bash
 yarn dlx @yarnpkg/sdks vscode
 ```
+```bash
+yarn dlx @yarnpkg/sdks webstorm
+```
 
 3. 명령어 적용 이후 VSCode 에디터에 나타나는 'Typescript 버전 적용' 알람을 승낙합니다. 
