@@ -1,0 +1,25 @@
+@keyframes rainbow {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 500% 0;
+  }
+}
+/*hover*/
+._hover-float-up {
+  transition: transform 0.25s ease-in-out;
+}
+
+._hover-float-up:hover {
+  transform: translateY(-4px);
+}
+
+/*bg*/
+._bg-skeleton {
+  background: linear-gradient(90deg, #9d9d9d, white, #9d9d9d);
+  background-size: 400%;
+  animation: rainbow 10s linear infinite;
+}
+
+/*# sourceMappingURL=Animation.css.map */

@@ -29,20 +29,28 @@ module.exports = {
   },
   plugins: ['react-refresh', 'react', 'react-hooks', '@typescript-eslint'],
   rules: {
+    'array-element-newline': [
+      'error',
+      {
+        ArrayExpression: 'consistent',
+        ArrayPattern: { minItems: 3 },
+      },
+    ],
     'react/jsx-curly-brace-presence': [
       'error',
       { props: 'never', children: 'never' },
     ],
-    "prettier/prettier": [
-      "error",
+    'prettier/prettier': [
+      'error',
       {
-        "endOfLine": "auto"
-      }
+        endOfLine: 'auto',
+      },
     ],
     'react-refresh/only-export-components': 'warn',
     'react/react-in-jsx-scope': 'off',
     'react/no-children-prop': 'off',
     'no-unused-expressions': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/no-empty-function': 'off',
     'react/no-unknown-property': ['error', { ignore: ['css'] }],

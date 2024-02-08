@@ -1,0 +1,28 @@
+.wrapper {
+  text-align: center;
+}
+.input-h1 {
+  padding-top: 60px;
+}
+input,
+button {
+  box-sizing: border-box;
+  width: 460px;
+  padding: 16px 12px;
+}
+.input,
+.button {
+  margin-bottom: 22px;
+}
+.button-submit {
+  width: 100%;
+  height: 60px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #17191d;
+  border-radius: 50px;
+  border: 0px;
+}
+span {
+  color: black;
+}
