@@ -33,3 +33,10 @@ dist-ssr
 
 # .env 
 .env
+
+# dist
+dist
+
+# vite
+.vite
+!.vite
