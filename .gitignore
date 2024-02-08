@@ -36,6 +36,6 @@ dist-ssr
 .env
 
 # build cache
-/.vite/deps/
 /dist/
 /.yarn/
+/.vite/deps/
