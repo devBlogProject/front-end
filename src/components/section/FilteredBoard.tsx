@@ -1,11 +1,11 @@
 import React, { MutableRefObject, useRef } from 'react'
 import Default from '@utils/interface'
 import TailwindProperties from '@utils/tailwindProperties'
-import { Post, PostResponse } from '@constants/interface'
+import { PostResponse } from '@constants/interface'
 import { DefaultPostCard } from '@components/common/DefaultPostCard'
 
 function FilteredBoard({ className }: Default) {
-  const cats: MutableRefObject<Array<number>> = useRef([0])
+  const cats: MutableRefObject<number[]> = useRef([0])
   const style: TailwindProperties = {
     sm: 'sm:w-auto sm:mx-60',
     base: 'w-full',
