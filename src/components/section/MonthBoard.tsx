@@ -1,7 +1,7 @@
 import React from 'react'
 import { PostResponse } from '@constants/interface'
 import Default from '@utils/interface'
-import TailwindProperties from '@utils/tailwindProperties'
+import TailwindProperties from '@styles/tailwindProperties.ts'
 import FeaturedPostCard from '@components/common/FeaturedPostCard'
 import { DefaultPostCard } from '@components/common/DefaultPostCard'
 

@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import TailwindProperties from '@utils/tailwindProperties'
+import TailwindProperties from '@styles/tailwindProperties.ts'
 
 function Navigator(className: any): React.JSX.Element {
   useEffect((): void => {

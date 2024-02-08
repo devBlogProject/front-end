@@ -1,7 +1,7 @@
 import React from 'react'
 import { Post } from '@constants/interface'
 import Default from '@utils/interface'
-import TailwindProperties from '@utils/tailwindProperties'
+import TailwindProperties from '@styles/tailwindProperties.ts'
 import CategoryButton from '@components/common/CategoryButton'
 import dateFormer from '@utils/date_former'
 
