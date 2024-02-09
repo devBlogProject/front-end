@@ -1,26 +1,28 @@
 export interface Post {
   status: string
-  data: {
-    createdDate: string
-    updatedDate: string
-    id: number
-    title: string
-    content: string
-    thumbnailUrl: string
-    categoryId: number
-    author: {
-      createdDate: string
-      updatedDate: string
-      email: string
-      nickName: string
-      authority: string
-      imageUrl: string
-      socialType: string
-    }
-    postNum: number
-    viewCount: number
-  }
+  data: PostData
   message: string
+}
+export type PostData = {
+  createdDate: string
+  updatedDate: string
+  id: number
+  title: string
+  content: string
+  thumbnailUrl: string
+  categoryId: number
+  author: PostAuthor
+  postNum: number
+  viewCount: number
+}
+export type PostAuthor = {
+  createdDate: string
+  updatedDate: string
+  email: string
+  nickName: string
+  authority: string
+  imageUrl: string
+  socialType: string
 }
 
 export const PostResponse: Post = {
