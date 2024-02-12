@@ -2,7 +2,7 @@ import React from 'react'
 import { PostResponse } from '@constants/interface'
 import TextPostCard from '@components/common/TextPostCard'
 import Default from '@utils/interface'
-import TailwindProperties from '@utils/tailwindProperties'
+import TailwindProperties from '@styles/tailwindProperties.ts'
 
 function LatestBoard({ className }: Default): React.JSX.Element {
   const style: TailwindProperties = {

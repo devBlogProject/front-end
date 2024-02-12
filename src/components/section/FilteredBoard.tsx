@@ -1,6 +1,6 @@
 import React, { MutableRefObject, useRef } from 'react'
 import Default from '@utils/interface'
-import TailwindProperties from '@utils/tailwindProperties'
+import TailwindProperties from '@styles/tailwindProperties.ts'
 import { Post, PostResponse } from '@constants/interface'
 import { DefaultPostCard } from '@components/common/DefaultPostCard'
 

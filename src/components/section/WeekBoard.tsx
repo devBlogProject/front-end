@@ -2,7 +2,7 @@ import React from 'react'
 import FeaturedPostCard from '@components/common/FeaturedPostCard'
 import { PostResponse } from '@constants/interface'
 import Default from '@utils/interface'
-import TailwindProperties from '@utils/tailwindProperties'
+import TailwindProperties from '@styles/tailwindProperties.ts'
 
 function WeekBoard({ className }: Default): React.JSX.Element {
   const style: TailwindProperties = {

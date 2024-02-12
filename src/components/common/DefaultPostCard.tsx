@@ -3,7 +3,7 @@ import { Post } from '@constants/interface'
 import Default from '@utils/interface'
 import CategoryButton from '@components/common/CategoryButton'
 import dateFormer from '@utils/date_former.ts'
-import TailwindProperties from '@utils/tailwindProperties.ts'
+import TailwindProperties from '@styles/tailwindProperties.ts'
 
 interface Interface extends Default {
   response: Post | null
